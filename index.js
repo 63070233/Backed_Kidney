@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors');
+// const cors = require('cors');
 const router = require('./src/Router/BaseRouter');
 const dotenv = require('dotenv');
 dotenv.config();
@@ -10,13 +10,13 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// Configure CORS to allow requests from a specific origin
-const corsOptions = {
-  origin: 'https://kidney-bot-project.web.app',
-  credentials: true,
-};
+// // Configure CORS to allow requests from a specific origin
+// const corsOptions = {
+//   origin: 'https://kidney-bot-project.web.app',
+//   credentials: true,
+// };
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 app.get('/', (req, res)=>{
     res.status(200);
