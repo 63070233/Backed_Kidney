@@ -104,8 +104,11 @@ class RecordProvider {
         try {
             const deToken = TokenChecker.isTokenValid(token)
 
-            if (deToken.is_admin == false) {
-                return null
+            // if (deToken.is_admin == false) {
+            //     return null
+            // }
+            if (!deToken || deToken.is_admin === undefined || deToken.is_admin === false) {
+            return null;
             }
             const patientId = patientIdObject.patientId;
             const collection_name = "Patient";
@@ -113,6 +116,7 @@ class RecordProvider {
             return result;
         } catch (error) {
             console.log(error);
+            return null; //add proper checks
         }
     }
 
